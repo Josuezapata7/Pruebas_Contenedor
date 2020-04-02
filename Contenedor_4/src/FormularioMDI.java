@@ -13,7 +13,8 @@ public class FormularioMDI extends javax.swing.JFrame {
     /**
      * Creates new form FormularioMDI
      */
-        public Mantenimiento_Maestros ventana_Maestros;
+        private Mantenimiento_Maestros ventana_Maestros;
+        private Mantenimiento_Alumnos ventana_Alumnos;
         
     public FormularioMDI() {
         initComponents();
@@ -44,16 +45,21 @@ public class FormularioMDI extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 482, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Catalogos");
 
         jMenu_Alumnos.setText("Mantenimiento_Alumnos");
+        jMenu_Alumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_AlumnosActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenu_Alumnos);
 
         jMenu_Maestros.setText("Mantenimiento_Maestros");
@@ -84,17 +90,13 @@ public class FormularioMDI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jDesktopPane1)
-                .addContainerGap())
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,6 +112,12 @@ public class FormularioMDI extends javax.swing.JFrame {
         ventana_Maestros = new Mantenimiento_Maestros();
         jDesktopPane1.add(ventana_Maestros);
     }//GEN-LAST:event_jMenu_MaestrosActionPerformed
+
+    private void jMenu_AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_AlumnosActionPerformed
+        // TODO add your handling code here:
+        ventana_Alumnos = new Mantenimiento_Alumnos();
+        jDesktopPane1.add(ventana_Alumnos);
+    }//GEN-LAST:event_jMenu_AlumnosActionPerformed
 
     /**
      * @param args the command line arguments
