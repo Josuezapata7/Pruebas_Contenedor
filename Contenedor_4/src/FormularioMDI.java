@@ -13,6 +13,8 @@ public class FormularioMDI extends javax.swing.JFrame {
     /**
      * Creates new form FormularioMDI
      */
+        public Mantenimiento_Maestros ventana_Maestros;
+        
     public FormularioMDI() {
         initComponents();
     }
@@ -27,6 +29,12 @@ public class FormularioMDI extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu_Alumnos = new javax.swing.JMenuItem();
+        jMenu_Maestros = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu_Salida = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -36,28 +44,72 @@ public class FormularioMDI extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 665, Short.MAX_VALUE)
+            .addGap(0, 708, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 496, Short.MAX_VALUE)
+            .addGap(0, 476, Short.MAX_VALUE)
         );
+
+        jMenu1.setText("Catalogos");
+
+        jMenu_Alumnos.setText("Mantenimiento_Alumnos");
+        jMenu1.add(jMenu_Alumnos);
+
+        jMenu_Maestros.setText("Mantenimiento_Maestros");
+        jMenu_Maestros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_MaestrosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenu_Maestros);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Salir");
+
+        jMenu_Salida.setText("Salida_del_Sistema");
+        jMenu_Salida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_SalidaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenu_Salida);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 55, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jDesktopPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenu_SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_SalidaActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenu_SalidaActionPerformed
+
+    private void jMenu_MaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_MaestrosActionPerformed
+        // TODO add your handling code here:
+        ventana_Maestros = new Mantenimiento_Maestros();
+        jDesktopPane1.add(ventana_Maestros);
+    }//GEN-LAST:event_jMenu_MaestrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,5 +148,11 @@ public class FormularioMDI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenu_Alumnos;
+    private javax.swing.JMenuItem jMenu_Maestros;
+    private javax.swing.JMenuItem jMenu_Salida;
     // End of variables declaration//GEN-END:variables
 }
